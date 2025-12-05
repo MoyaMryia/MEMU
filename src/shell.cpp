@@ -9,7 +9,11 @@ static char *rlGets(){
         lineRead = NULL;
     }
     lineRead = readline("(memu)");
-    
+
+    if(lineRead && *lineRead){
+        add_history(lineRead);
+    }
+    return lineRead;
 }
 
 void startShell(){
