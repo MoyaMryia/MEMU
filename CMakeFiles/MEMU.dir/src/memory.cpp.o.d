@@ -1,7 +1,7 @@
 CMakeFiles/MEMU.dir/src/memory.cpp.o: /home/moyamryia/MEMU/src/memory.cpp \
  /usr/include/stdc-predef.h /home/moyamryia/MEMU/src/../include/memory.h \
- /home/moyamryia/MEMU/src/../include/common.h /usr/include/assert.h \
- /usr/include/features.h /usr/include/features-time64.h \
+ /usr/include/assert.h /usr/include/features.h \
+ /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \

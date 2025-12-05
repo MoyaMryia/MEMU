@@ -13,7 +13,7 @@ void startMonitor(int argc,char **argv){
 
 void printStatus(){
     std::cout<<"PC Clock:"<<read_pc_clock()
-        <<"\nPC Status:"<<get_pc()
+        <<"\nPC Status:"<<read_pc()
         <<"\nGPR Status:\n";
     for(int i = 0;i<32;++i){
         std::cout<<read_gpr(i)<<' ';

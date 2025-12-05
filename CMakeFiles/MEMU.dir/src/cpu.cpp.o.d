@@ -150,4 +150,4 @@ CMakeFiles/MEMU.dir/src/cpu.cpp.o: /home/moyamryia/MEMU/src/cpu.cpp \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc /usr/include/string.h \
- /usr/include/strings.h
+ /usr/include/strings.h /home/moyamryia/MEMU/src/../include/memory.h

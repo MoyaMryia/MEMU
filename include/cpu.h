@@ -1,5 +1,7 @@
 #include "common.h"
 
+
+//all imm is pre-extended
 void addi(u_int32_t rd, u_int32_t rs1, int32_t imm){
     u_int32_t data = read_gpr(rs1) + imm;
     write_gpr(rd,data);
@@ -21,7 +23,35 @@ void add(u_int32_t rd,u_int32_t rs1, u_int32_t rs2){
 }
 
 void lui(u_int32_t rd, u_int32_t imm){
-    //imm is pre-extended
     write_gpr(rd, imm);
     increment_pc();
+}
+
+void lw(u_int32_t rd, u_int32_t rs1, u_int32_t imm){
+    u_int32_t data = read_memory_word(rs1+imm);
+    write_gpr(rd,data);
+    increment_pc();
+    return ;
+}
+
+void lbu(u_int32_t rd, u_int32_t rs1, u_int32_t imm){
+    u_int32_t data = read_memory_byte(rs1+imm);
+    //pre controlled
+    write_gpr(rd,data);
+    increment_pc();
+    return ;
+}
+
+void sb(u_int32_t rs1, u_int32_t rs2, u_int32_t imm){
+    u_int32_t data = read_gpr(rs2);
+    write_memory_byte(rs1+imm,data);
+    increment_pc();
+    return ;
+}
+
+void sw(u_int32_t rs1, u_int32_t rs2, u_int32_t imm){
+    u_int32_t data = read_gpr(rs2);
+    write_memory_word(rs1+imm,data);
+    increment_pc();
+    return ;
 }

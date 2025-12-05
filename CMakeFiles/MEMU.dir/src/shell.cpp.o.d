@@ -150,7 +150,8 @@ CMakeFiles/MEMU.dir/src/shell.cpp.o: /home/moyamryia/MEMU/src/shell.cpp \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc /usr/include/string.h \
- /usr/include/strings.h /usr/include/readline/readline.h \
- /usr/include/readline/rlstdc.h /usr/include/readline/rltypedefs.h \
- /usr/include/readline/keymaps.h /usr/include/readline/chardefs.h \
- /usr/include/readline/tilde.h /usr/include/readline/history.h
+ /usr/include/strings.h /home/moyamryia/MEMU/include/memory.h \
+ /usr/include/readline/readline.h /usr/include/readline/rlstdc.h \
+ /usr/include/readline/rltypedefs.h /usr/include/readline/keymaps.h \
+ /usr/include/readline/chardefs.h /usr/include/readline/tilde.h \
+ /usr/include/readline/history.h
