@@ -83,10 +83,38 @@ CMakeFiles/MEMU.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MEMU.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moyamryia/MEMU/main.cpp -o CMakeFiles/MEMU.dir/main.cpp.s
 
+CMakeFiles/MEMU.dir/src/cpu.cpp.o: CMakeFiles/MEMU.dir/flags.make
+CMakeFiles/MEMU.dir/src/cpu.cpp.o: src/cpu.cpp
+CMakeFiles/MEMU.dir/src/cpu.cpp.o: CMakeFiles/MEMU.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/moyamryia/MEMU/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MEMU.dir/src/cpu.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MEMU.dir/src/cpu.cpp.o -MF CMakeFiles/MEMU.dir/src/cpu.cpp.o.d -o CMakeFiles/MEMU.dir/src/cpu.cpp.o -c /home/moyamryia/MEMU/src/cpu.cpp
+
+CMakeFiles/MEMU.dir/src/cpu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MEMU.dir/src/cpu.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moyamryia/MEMU/src/cpu.cpp > CMakeFiles/MEMU.dir/src/cpu.cpp.i
+
+CMakeFiles/MEMU.dir/src/cpu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MEMU.dir/src/cpu.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moyamryia/MEMU/src/cpu.cpp -o CMakeFiles/MEMU.dir/src/cpu.cpp.s
+
+CMakeFiles/MEMU.dir/src/memory.cpp.o: CMakeFiles/MEMU.dir/flags.make
+CMakeFiles/MEMU.dir/src/memory.cpp.o: src/memory.cpp
+CMakeFiles/MEMU.dir/src/memory.cpp.o: CMakeFiles/MEMU.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/moyamryia/MEMU/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MEMU.dir/src/memory.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MEMU.dir/src/memory.cpp.o -MF CMakeFiles/MEMU.dir/src/memory.cpp.o.d -o CMakeFiles/MEMU.dir/src/memory.cpp.o -c /home/moyamryia/MEMU/src/memory.cpp
+
+CMakeFiles/MEMU.dir/src/memory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MEMU.dir/src/memory.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moyamryia/MEMU/src/memory.cpp > CMakeFiles/MEMU.dir/src/memory.cpp.i
+
+CMakeFiles/MEMU.dir/src/memory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MEMU.dir/src/memory.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moyamryia/MEMU/src/memory.cpp -o CMakeFiles/MEMU.dir/src/memory.cpp.s
+
 CMakeFiles/MEMU.dir/src/monitor.cpp.o: CMakeFiles/MEMU.dir/flags.make
 CMakeFiles/MEMU.dir/src/monitor.cpp.o: src/monitor.cpp
 CMakeFiles/MEMU.dir/src/monitor.cpp.o: CMakeFiles/MEMU.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/moyamryia/MEMU/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MEMU.dir/src/monitor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/moyamryia/MEMU/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MEMU.dir/src/monitor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MEMU.dir/src/monitor.cpp.o -MF CMakeFiles/MEMU.dir/src/monitor.cpp.o.d -o CMakeFiles/MEMU.dir/src/monitor.cpp.o -c /home/moyamryia/MEMU/src/monitor.cpp
 
 CMakeFiles/MEMU.dir/src/monitor.cpp.i: cmake_force
@@ -97,24 +125,10 @@ CMakeFiles/MEMU.dir/src/monitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MEMU.dir/src/monitor.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moyamryia/MEMU/src/monitor.cpp -o CMakeFiles/MEMU.dir/src/monitor.cpp.s
 
-CMakeFiles/MEMU.dir/src/runner.cpp.o: CMakeFiles/MEMU.dir/flags.make
-CMakeFiles/MEMU.dir/src/runner.cpp.o: src/runner.cpp
-CMakeFiles/MEMU.dir/src/runner.cpp.o: CMakeFiles/MEMU.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/moyamryia/MEMU/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MEMU.dir/src/runner.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MEMU.dir/src/runner.cpp.o -MF CMakeFiles/MEMU.dir/src/runner.cpp.o.d -o CMakeFiles/MEMU.dir/src/runner.cpp.o -c /home/moyamryia/MEMU/src/runner.cpp
-
-CMakeFiles/MEMU.dir/src/runner.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MEMU.dir/src/runner.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moyamryia/MEMU/src/runner.cpp > CMakeFiles/MEMU.dir/src/runner.cpp.i
-
-CMakeFiles/MEMU.dir/src/runner.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MEMU.dir/src/runner.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moyamryia/MEMU/src/runner.cpp -o CMakeFiles/MEMU.dir/src/runner.cpp.s
-
 CMakeFiles/MEMU.dir/src/shell.cpp.o: CMakeFiles/MEMU.dir/flags.make
 CMakeFiles/MEMU.dir/src/shell.cpp.o: src/shell.cpp
 CMakeFiles/MEMU.dir/src/shell.cpp.o: CMakeFiles/MEMU.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/moyamryia/MEMU/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MEMU.dir/src/shell.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/moyamryia/MEMU/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MEMU.dir/src/shell.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MEMU.dir/src/shell.cpp.o -MF CMakeFiles/MEMU.dir/src/shell.cpp.o.d -o CMakeFiles/MEMU.dir/src/shell.cpp.o -c /home/moyamryia/MEMU/src/shell.cpp
 
 CMakeFiles/MEMU.dir/src/shell.cpp.i: cmake_force
@@ -128,22 +142,24 @@ CMakeFiles/MEMU.dir/src/shell.cpp.s: cmake_force
 # Object files for target MEMU
 MEMU_OBJECTS = \
 "CMakeFiles/MEMU.dir/main.cpp.o" \
+"CMakeFiles/MEMU.dir/src/cpu.cpp.o" \
+"CMakeFiles/MEMU.dir/src/memory.cpp.o" \
 "CMakeFiles/MEMU.dir/src/monitor.cpp.o" \
-"CMakeFiles/MEMU.dir/src/runner.cpp.o" \
 "CMakeFiles/MEMU.dir/src/shell.cpp.o"
 
 # External object files for target MEMU
 MEMU_EXTERNAL_OBJECTS =
 
 MEMU: CMakeFiles/MEMU.dir/main.cpp.o
+MEMU: CMakeFiles/MEMU.dir/src/cpu.cpp.o
+MEMU: CMakeFiles/MEMU.dir/src/memory.cpp.o
 MEMU: CMakeFiles/MEMU.dir/src/monitor.cpp.o
-MEMU: CMakeFiles/MEMU.dir/src/runner.cpp.o
 MEMU: CMakeFiles/MEMU.dir/src/shell.cpp.o
 MEMU: CMakeFiles/MEMU.dir/build.make
 MEMU: /usr/lib/x86_64-linux-gnu/libreadline.so
 MEMU: /usr/lib/x86_64-linux-gnu/libncurses.so
 MEMU: CMakeFiles/MEMU.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/moyamryia/MEMU/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable MEMU"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/moyamryia/MEMU/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable MEMU"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MEMU.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

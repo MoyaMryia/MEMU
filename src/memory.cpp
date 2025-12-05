@@ -71,7 +71,7 @@ void write_memory_byte(u_int32_t address, u_int32_t data){
     return ;
 }
 //PC GPR
-u_int32_t get_pc(){
+u_int32_t read_pc(){
     return PC_GPR;
 }
 void increment_pc(){
@@ -93,5 +93,5 @@ void increment_pc_clock(){
     return ;
 }
 u_int64_t read_pc_clock(){
-    return PC_CLOCK;;
+    return PC_CLOCK;
 }

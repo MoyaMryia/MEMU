@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/MEMU.dir/main.cpp.o CMakeFiles/MEMU.dir/src/monitor.cpp.o CMakeFiles/MEMU.dir/src/runner.cpp.o CMakeFiles/MEMU.dir/src/shell.cpp.o -o MEMU  /usr/lib/x86_64-linux-gnu/libreadline.so -lncurses 
+/usr/bin/c++ CMakeFiles/MEMU.dir/main.cpp.o CMakeFiles/MEMU.dir/src/cpu.cpp.o CMakeFiles/MEMU.dir/src/memory.cpp.o CMakeFiles/MEMU.dir/src/monitor.cpp.o CMakeFiles/MEMU.dir/src/shell.cpp.o -o MEMU  /usr/lib/x86_64-linux-gnu/libreadline.so -lncurses 

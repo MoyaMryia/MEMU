@@ -9,8 +9,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/moyamryia/MEMU/main.cpp" "CMakeFiles/MEMU.dir/main.cpp.o" "gcc" "CMakeFiles/MEMU.dir/main.cpp.o.d"
+  "/home/moyamryia/MEMU/src/cpu.cpp" "CMakeFiles/MEMU.dir/src/cpu.cpp.o" "gcc" "CMakeFiles/MEMU.dir/src/cpu.cpp.o.d"
+  "/home/moyamryia/MEMU/src/memory.cpp" "CMakeFiles/MEMU.dir/src/memory.cpp.o" "gcc" "CMakeFiles/MEMU.dir/src/memory.cpp.o.d"
   "/home/moyamryia/MEMU/src/monitor.cpp" "CMakeFiles/MEMU.dir/src/monitor.cpp.o" "gcc" "CMakeFiles/MEMU.dir/src/monitor.cpp.o.d"
-  "/home/moyamryia/MEMU/src/runner.cpp" "CMakeFiles/MEMU.dir/src/runner.cpp.o" "gcc" "CMakeFiles/MEMU.dir/src/runner.cpp.o.d"
   "/home/moyamryia/MEMU/src/shell.cpp" "CMakeFiles/MEMU.dir/src/shell.cpp.o" "gcc" "CMakeFiles/MEMU.dir/src/shell.cpp.o.d"
   )
 

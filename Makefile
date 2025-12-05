@@ -153,6 +153,54 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/cpu.o: src/cpu.cpp.o
+.PHONY : src/cpu.o
+
+# target to build an object file
+src/cpu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/cpu.cpp.o
+.PHONY : src/cpu.cpp.o
+
+src/cpu.i: src/cpu.cpp.i
+.PHONY : src/cpu.i
+
+# target to preprocess a source file
+src/cpu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/cpu.cpp.i
+.PHONY : src/cpu.cpp.i
+
+src/cpu.s: src/cpu.cpp.s
+.PHONY : src/cpu.s
+
+# target to generate assembly for a file
+src/cpu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/cpu.cpp.s
+.PHONY : src/cpu.cpp.s
+
+src/memory.o: src/memory.cpp.o
+.PHONY : src/memory.o
+
+# target to build an object file
+src/memory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/memory.cpp.o
+.PHONY : src/memory.cpp.o
+
+src/memory.i: src/memory.cpp.i
+.PHONY : src/memory.i
+
+# target to preprocess a source file
+src/memory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/memory.cpp.i
+.PHONY : src/memory.cpp.i
+
+src/memory.s: src/memory.cpp.s
+.PHONY : src/memory.s
+
+# target to generate assembly for a file
+src/memory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/memory.cpp.s
+.PHONY : src/memory.cpp.s
+
 src/monitor.o: src/monitor.cpp.o
 .PHONY : src/monitor.o
 
@@ -176,30 +224,6 @@ src/monitor.s: src/monitor.cpp.s
 src/monitor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/monitor.cpp.s
 .PHONY : src/monitor.cpp.s
-
-src/runner.o: src/runner.cpp.o
-.PHONY : src/runner.o
-
-# target to build an object file
-src/runner.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/runner.cpp.o
-.PHONY : src/runner.cpp.o
-
-src/runner.i: src/runner.cpp.i
-.PHONY : src/runner.i
-
-# target to preprocess a source file
-src/runner.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/runner.cpp.i
-.PHONY : src/runner.cpp.i
-
-src/runner.s: src/runner.cpp.s
-.PHONY : src/runner.s
-
-# target to generate assembly for a file
-src/runner.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/runner.cpp.s
-.PHONY : src/runner.cpp.s
 
 src/shell.o: src/shell.cpp.o
 .PHONY : src/shell.o
@@ -237,12 +261,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/cpu.o"
+	@echo "... src/cpu.i"
+	@echo "... src/cpu.s"
+	@echo "... src/memory.o"
+	@echo "... src/memory.i"
+	@echo "... src/memory.s"
 	@echo "... src/monitor.o"
 	@echo "... src/monitor.i"
 	@echo "... src/monitor.s"
-	@echo "... src/runner.o"
-	@echo "... src/runner.i"
-	@echo "... src/runner.s"
 	@echo "... src/shell.o"
 	@echo "... src/shell.i"
 	@echo "... src/shell.s"
