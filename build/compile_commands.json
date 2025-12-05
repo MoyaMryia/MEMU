@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/moyamryia/MEMU/build",
+  "command": "/usr/bin/g++  -I/home/moyamryia/MEMU/include -g -o CMakeFiles/MEMU.dir/main.cpp.o -c /home/moyamryia/MEMU/main.cpp",
+  "file": "/home/moyamryia/MEMU/main.cpp",
+  "output": "CMakeFiles/MEMU.dir/main.cpp.o"
+},
+{
+  "directory": "/home/moyamryia/MEMU/build",
+  "command": "/usr/bin/g++  -I/home/moyamryia/MEMU/include -g -o CMakeFiles/MEMU.dir/src/monitor.cpp.o -c /home/moyamryia/MEMU/src/monitor.cpp",
+  "file": "/home/moyamryia/MEMU/src/monitor.cpp",
+  "output": "CMakeFiles/MEMU.dir/src/monitor.cpp.o"
+}
+]

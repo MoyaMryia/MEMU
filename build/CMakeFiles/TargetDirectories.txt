@@ -1,0 +1,3 @@
+/home/moyamryia/MEMU/build/CMakeFiles/MEMU.dir
+/home/moyamryia/MEMU/build/CMakeFiles/edit_cache.dir
+/home/moyamryia/MEMU/build/CMakeFiles/rebuild_cache.dir
