@@ -15,6 +15,11 @@ endif()
 include_directories(include/ ${READLINE_INCLUDE_DIR})
 file(GLOB SOURCES_TOOLS "tools/*.cpp")
 file(GLOB SOURCES_SRC "src/*.cpp")
-link_directories(${READLINE_LIBRARY} ${NCURSES_LIBRARY})
+
 add_executable( MEMU main.cpp ${SOURCES_SRC} ${SOURCES_TOOLS} )
+target_link_libraries(MEMU 
+    PRIVATE 
+        ${READLINE_LIBRARY}
+        ${NCURSES_LIBRARY} # Readline 通常需要依赖 Ncurses/Termcap
+)
 target_link_libraries( MEMU PRIVATE )

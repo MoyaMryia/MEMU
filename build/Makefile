@@ -177,6 +177,54 @@ src/monitor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/monitor.cpp.s
 .PHONY : src/monitor.cpp.s
 
+src/runner.o: src/runner.cpp.o
+.PHONY : src/runner.o
+
+# target to build an object file
+src/runner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/runner.cpp.o
+.PHONY : src/runner.cpp.o
+
+src/runner.i: src/runner.cpp.i
+.PHONY : src/runner.i
+
+# target to preprocess a source file
+src/runner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/runner.cpp.i
+.PHONY : src/runner.cpp.i
+
+src/runner.s: src/runner.cpp.s
+.PHONY : src/runner.s
+
+# target to generate assembly for a file
+src/runner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/runner.cpp.s
+.PHONY : src/runner.cpp.s
+
+src/shell.o: src/shell.cpp.o
+.PHONY : src/shell.o
+
+# target to build an object file
+src/shell.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/shell.cpp.o
+.PHONY : src/shell.cpp.o
+
+src/shell.i: src/shell.cpp.i
+.PHONY : src/shell.i
+
+# target to preprocess a source file
+src/shell.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/shell.cpp.i
+.PHONY : src/shell.cpp.i
+
+src/shell.s: src/shell.cpp.s
+.PHONY : src/shell.s
+
+# target to generate assembly for a file
+src/shell.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/src/shell.cpp.s
+.PHONY : src/shell.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +240,12 @@ help:
 	@echo "... src/monitor.o"
 	@echo "... src/monitor.i"
 	@echo "... src/monitor.s"
+	@echo "... src/runner.o"
+	@echo "... src/runner.i"
+	@echo "... src/runner.s"
+	@echo "... src/shell.o"
+	@echo "... src/shell.i"
+	@echo "... src/shell.s"
 .PHONY : help
 
 

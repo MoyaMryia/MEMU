@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/moyamryia/MEMU/main.cpp" "CMakeFiles/MEMU.dir/main.cpp.o" "gcc" "CMakeFiles/MEMU.dir/main.cpp.o.d"
   "/home/moyamryia/MEMU/src/monitor.cpp" "CMakeFiles/MEMU.dir/src/monitor.cpp.o" "gcc" "CMakeFiles/MEMU.dir/src/monitor.cpp.o.d"
+  "/home/moyamryia/MEMU/src/runner.cpp" "CMakeFiles/MEMU.dir/src/runner.cpp.o" "gcc" "CMakeFiles/MEMU.dir/src/runner.cpp.o.d"
   "/home/moyamryia/MEMU/src/shell.cpp" "CMakeFiles/MEMU.dir/src/shell.cpp.o" "gcc" "CMakeFiles/MEMU.dir/src/shell.cpp.o.d"
   )
 

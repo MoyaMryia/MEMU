@@ -10,5 +10,17 @@
   "command": "/usr/bin/g++  -I/home/moyamryia/MEMU/include -g -o CMakeFiles/MEMU.dir/src/monitor.cpp.o -c /home/moyamryia/MEMU/src/monitor.cpp",
   "file": "/home/moyamryia/MEMU/src/monitor.cpp",
   "output": "CMakeFiles/MEMU.dir/src/monitor.cpp.o"
+},
+{
+  "directory": "/home/moyamryia/MEMU/build",
+  "command": "/usr/bin/g++  -I/home/moyamryia/MEMU/include -g -o CMakeFiles/MEMU.dir/src/runner.cpp.o -c /home/moyamryia/MEMU/src/runner.cpp",
+  "file": "/home/moyamryia/MEMU/src/runner.cpp",
+  "output": "CMakeFiles/MEMU.dir/src/runner.cpp.o"
+},
+{
+  "directory": "/home/moyamryia/MEMU/build",
+  "command": "/usr/bin/g++  -I/home/moyamryia/MEMU/include -g -o CMakeFiles/MEMU.dir/src/shell.cpp.o -c /home/moyamryia/MEMU/src/shell.cpp",
+  "file": "/home/moyamryia/MEMU/src/shell.cpp",
+  "output": "CMakeFiles/MEMU.dir/src/shell.cpp.o"
 }
 ]
