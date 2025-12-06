@@ -93,7 +93,7 @@ void run_cycle(){
     //decode command & run
     
     //because of the jalr, the switch process will be in mainRun()
-    runMain(operate, 0);
+    runMain(operate, 1);
     //printStatus();
     //get next clock
     increment_pc_clock();
