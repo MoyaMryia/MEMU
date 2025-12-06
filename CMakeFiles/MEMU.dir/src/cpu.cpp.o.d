@@ -1,7 +1,7 @@
 CMakeFiles/MEMU.dir/src/cpu.cpp.o: /home/moyamryia/MEMU/src/cpu.cpp \
- /usr/include/stdc-predef.h /home/moyamryia/MEMU/src/../include/common.h \
- /usr/include/assert.h /usr/include/features.h \
- /usr/include/features-time64.h \
+ /usr/include/stdc-predef.h /home/moyamryia/MEMU/src/../include/cpu.h \
+ /home/moyamryia/MEMU/src/../include/common.h /usr/include/assert.h \
+ /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -150,4 +150,9 @@ CMakeFiles/MEMU.dir/src/cpu.cpp.o: /home/moyamryia/MEMU/src/cpu.cpp \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc /usr/include/string.h \
- /usr/include/strings.h /home/moyamryia/MEMU/src/../include/memory.h
+ /usr/include/strings.h /home/moyamryia/MEMU/src/../include/memory.h \
+ /usr/include/c++/13/fstream /usr/include/c++/13/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
+ /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/sstream \
+ /usr/include/c++/13/bits/sstream.tcc

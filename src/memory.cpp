@@ -95,3 +95,50 @@ void increment_pc_clock(){
 u_int64_t read_pc_clock(){
     return PC_CLOCK;
 }
+void init_memory(const std::string& filename) {
+    std::ifstream file(filename);
+    std::string line;
+    u_int32_t word_index = 0;
+
+    if (!file.is_open()) {
+        std::cerr << "Error: Cannot open data file " << filename << std::endl;
+        return;
+    }
+
+    while (std::getline(file, line) && word_index < RAM_WORD_SIZE) {
+        // 假设每行是一个 32 位十六进制数，例如 "0xABCD1234"
+        u_int32_t data_word;
+        // 使用 std::hex 将字符串解析为十六进制整数
+        std::stringstream ss;
+        ss << std::hex << line;
+        ss >> data_word; 
+        
+        // 写入 RAM
+        memUsr[word_index++] = data_word;
+    }
+    std::cout << "Successfully loaded " << word_index << " words into RAM." << std::endl;
+}
+
+void init_rom(const std::string& filename) {
+    std::ifstream file(filename);
+    std::string line;
+    u_int32_t word_index = 0;
+
+    if (!file.is_open()) {
+        std::cerr << "Error: Cannot open data file " << filename << std::endl;
+        return;
+    }
+
+    while (std::getline(file, line) && word_index < RAM_WORD_SIZE) {
+        // 假设每行是一个 32 位十六进制数，例如 "0xABCD1234"
+        u_int32_t data_word;
+        // 使用 std::hex 将字符串解析为十六进制整数
+        std::stringstream ss;
+        ss << std::hex << line;
+        ss >> data_word; 
+        
+        // 写入 RAM
+        romPro[word_index++] = data_word;
+    }
+    std::cout << "Successfully loaded " << word_index << " words into ROM." << std::endl;
+}

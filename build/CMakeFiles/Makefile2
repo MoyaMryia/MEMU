@@ -81,12 +81,12 @@ clean: CMakeFiles/MEMU.dir/clean
 CMakeFiles/MEMU.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MEMU.dir/build.make CMakeFiles/MEMU.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/moyamryia/MEMU/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target MEMU"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/moyamryia/MEMU/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target MEMU"
 .PHONY : CMakeFiles/MEMU.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MEMU.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/moyamryia/MEMU/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moyamryia/MEMU/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MEMU.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/moyamryia/MEMU/build/CMakeFiles 0
 .PHONY : CMakeFiles/MEMU.dir/rule

@@ -1,4 +1,4 @@
-#include "../include/common.h"
+#include "../include/cpu.h"
 
 int32_t sign_extend(u_int32_t imm, int bits) {
     if ((imm >> (bits - 1)) & 1) {
@@ -8,41 +8,44 @@ int32_t sign_extend(u_int32_t imm, int bits) {
     }
 }
 
-void runMain(u_int32_t operate){
+void runMain(u_int32_t operate,bool printer){
     u_int32_t opcode = operate & 0b1111111;
     u_int32_t rd = (operate >> 7) & 0b11111;
     u_int32_t funct3 = (operate >> 12) & 0b111;
     u_int32_t rs1 = (operate >> 15) & 0b11111;
     u_int32_t rs2 = (operate >> 20) & 0b11111;
     u_int32_t funct7 = (operate >>25) & 0b1111111;
-
+    std::cout<<"Now Command:";
     if(opcode == 0b0010011 && funct3 == 0b000){ 
         //addi
         int32_t imm = sign_extend(operate>>20,12);
-        std::cout<<"addi x"<<rd<<",x"<<rs1<<","<<imm<<std::endl;
-
+        if(printer) std::cout<<"addi x"<<rd<<",x"<<rs1<<","<<imm<<std::endl;
+        addi(rd,rs1,imm);
     }else if(opcode == 0b1100111 && funct3 == 0b000){
         //jalr
         int32_t imm = sign_extend(operate>>20,12);
-        std::cout<<"jalr x"<<rd<<","<<imm<<"(x"<<rs1<<")"<<std::endl;
+        if(printer) std::cout<<"jalr x"<<rd<<","<<imm<<"(x"<<rs1<<")"<<std::endl;
+        jalr(rd,rs1,imm);
     }else if(opcode == 0b0110011 && funct3 == 0b000 && funct7 == 0b0000000){
         //add
-        std::cout<<"add x"<<rd<<",x"<<rs1<<",x"<<rs2<<std::endl;
-
+        if(printer) std::cout<<"add x"<<rd<<",x"<<rs1<<",x"<<rs2<<std::endl;
+        add(rd,rs1,rs2);
     }else if(opcode == 0b0110111){
         //lui
         int32_t imm = operate & 0xFFFFF000;
-        std::cout<<"lui x"<<rd<<",0x"<<std::hex << (imm >> 12)<<std::endl;
-
+        if(printer) std::cout<<"lui x"<<rd<<",0x"<<std::hex << (imm >> 12)<<std::endl;  
+        lui(rd,imm);
     }else if(opcode == 0b0000011) {
         //lw & lbu
         int32_t imm = sign_extend(operate>>20,12);
         if(funct3 == 0b010){
             //lw
-            std::cout << "lw x" << rd << "," << imm << "(x" << rs1 << ")" << std::endl;
+            if(printer) std::cout << "lw x" << rd << "," << imm << "(x" << rs1 << ")" << std::endl;
+            lw(rd,rs1,imm);
         }else if(funct3 == 0b100){
             //lbu
-            std::cout << "lbu x" << rd << "," << imm << "(x" << rs1 << ")" << std::endl;
+            if(printer) std::cout << "lbu x" << rd << "," << imm << "(x" << rs1 << ")" << std::endl;
+            lbu(rd,rs1,imm);
         }else {
             goto ERROR_OCCUR;
         }
@@ -52,10 +55,12 @@ void runMain(u_int32_t operate){
         int32_t imm = sign_extend(imm_s, 12);
         if(funct3 == 0b000){
             //sb
-            std::cout << "sb x" << rs2 << "," << imm << "(x" << rs1 << ")" << std::endl;
+            if(printer) std::cout << "sb x" << rs2 << "," << imm << "(x" << rs1 << ")" << std::endl;
+            sb(rs1,rs2,imm);
         }else if(funct3 == 0b010){
             //sw
-            std::cout << "sw x" << rs2 << "," << imm << "(x" << rs1 << ")" << std::endl;
+            if(printer) std::cout << "sw x" << rs2 << "," << imm << "(x" << rs1 << ")" << std::endl;
+            sw(rs1,rs2,imm);
         }else{
             goto ERROR_OCCUR;
         }
@@ -67,3 +72,4 @@ void runMain(u_int32_t operate){
                   << std::hex << opcode << std::dec << ")" << std::endl;
     return ;
 }
+//0000000 00100 00010 010 00000 010 0011
