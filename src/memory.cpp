@@ -66,8 +66,8 @@ void write_memory_byte(u_int32_t address, u_int32_t data){
     u_int32_t byte_offset = address & 0b11;
     u_int32_t shift_amount = byte_offset * 8;
     u_int32_t write_data = (data & 0xFF)<<shift_amount;
-    u_int32_t dcode = !(0xff<<shift_amount);
-    memUsr[word_index] = (memUsr[word_index] & dcode) | write_data;
+    u_int32_t mask = ~(0xFFU << shift_amount);
+    memUsr[word_index] = (memUsr[word_index] & mask) | write_data;
     return ;
 }
 //PC GPR

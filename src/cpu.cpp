@@ -1,83 +1,100 @@
 #include "../include/cpu.h"
 #include <bitset>
-int32_t sign_extend(u_int32_t imm, int bits) {
-    if ((imm >> (bits - 1)) & 1) {
-        return (int32_t)(imm | (~((1 << bits) - 1)));
-    } else {
-        return (int32_t)imm;
-    }
+#include <iostream>
+int32_t sign_extend(u_int32_t imm, int bits)
+{
+    int32_t shift = 32 - bits;
+    return (int32_t)(imm << shift) >> shift;
 }
-
-void runMain(u_int32_t operate,bool printer){
-    
-    u_int32_t opcode = operate & 0b1111111;
-    u_int32_t rd = (operate >> 7) & 0b11111;
-    u_int32_t funct3 = (operate >> 12) & 0b111;
-    u_int32_t rs1 = (operate >> 15) & 0b11111;
-    u_int32_t rs2 = (operate >> 20) & 0b11111;
-    u_int32_t funct7 = (operate >>25) & 0b1111111;
-    //std::cout<<"Command:"<<operate<<std::endl;
-    /*
-    std::cout<<"opcode:"<<std::bitset<7>(opcode)<<std::endl;
-    std::cout<<"rd:"<<std::bitset<5>(rd)<<std::endl;
-    std::cout<<"funct3:"<<std::bitset<3>(funct3)<<std::endl;
-    std::cout<<"rs1:"<<std::bitset<5>(rs1)<<std::endl;
-    std::cout<<"rs2:"<<std::bitset<5>(rs2)<<std::endl;
-    std::cout<<"funct7:"<<std::bitset<7>(funct7)<<std::endl;*/
-    //std::cout<<"Now Command:";
-    if(opcode == 0b0010011 && funct3 == 0b000){ 
-        //addi
-        int32_t imm = sign_extend(operate>>20,12);
-        if(printer) std::cout<<"addi x"<<rd<<",x"<<rs1<<","<<imm<<std::endl;
-        addi(rd,rs1,imm);
-    }else if(opcode == 0b1100111 && funct3 == 0b000){
-        //jalr
-        int32_t imm = sign_extend(operate>>20,12);
-        if(printer) std::cout<<"jalr x"<<rd<<","<<imm<<"(x"<<rs1<<")"<<std::endl;
-        jalr(rd,rs1,imm);
-    }else if(opcode == 0b0110011 && funct3 == 0b000 && funct7 == 0b0000000){
-        //add
-        if(printer) std::cout<<"add x"<<rd<<",x"<<rs1<<",x"<<rs2<<std::endl;
-        add(rd,rs1,rs2);
-    }else if(opcode == 0b0110111){
-        //lui
-        int32_t imm = operate & 0xFFFFF000;
-        if(printer) std::cout<<"lui x"<<rd<<",0x"<<std::hex << (imm >> 12)<<std::endl;  
-        lui(rd,imm);
-    }else if(opcode == 0b0000011) {
-        //lw & lbu
-        int32_t imm = sign_extend(operate>>20,12);
-        if(funct3 == 0b010){
-            //lw
-            if(printer) std::cout << "lw x" << rd << "," << imm << "(x" << rs1 << ")" << std::endl;
-            lw(rd,rs1,imm);
-        }else if(funct3 == 0b100){
-            //lbu
-            if(printer) std::cout << "lbu x" << rd << "," << imm << "(x" << rs1 << ")" << std::endl;
-            lbu(rd,rs1,imm);
-        }else {
-            goto ERROR_OCCUR;
-        }
-    }else if(opcode == 0b0100011) {
-        //sw & sb
-        u_int32_t imm_s = (funct7<<5) | rd;
-        int32_t imm = sign_extend(imm_s, 12);
-        if(funct3 == 0b000){
-            //sb
-            if(printer) std::cout<< "sb x" << rs2 << "," << imm << "(x" << rs1 << ")" << std::endl;
-            sb(rs1,rs2,imm);
-        }else if(funct3 == 0b010){
-            //sw
-            if(printer) std::cout<< "sw x" << rs2 << "," << imm << "(x" << rs1 << ")" << std::endl;
-            sw(rs1,rs2,imm);
-        }else{
-            goto ERROR_OCCUR;
-        }
-    }else{
-        goto ERROR_OCCUR;
+void runMain(u_int32_t operate, bool printer)
+{
+    u_int32_t opcode = operate & 0x7F;
+    u_int32_t rd = (operate >> 7) & 0x1F;
+    u_int32_t funct3 = (operate >> 12) & 0x7;
+    u_int32_t rs1 = (operate >> 15) & 0x1F;
+    u_int32_t rs2 = (operate >> 20) & 0x1F;
+    u_int32_t funct7 = (operate >> 25) & 0x7F;
+    if (opcode == 0b0010011 && funct3 == 0b000)
+    { // addi
+        int32_t imm = sign_extend(operate >> 20, 12);
+        if (printer)
+            std::cout << "addi x" << rd << ", x" << rs1 << ", " << imm << std::endl;
+        addi(rd, rs1, imm);
     }
-    return ;
-    ERROR_OCCUR:std::cout << "Unsupported operation or wrong typed (Opcode: " 
-                  << std::hex << opcode << std::dec << ")" << std::endl;
-    return ;
+    else if (opcode == 0b1100111 && funct3 == 0b000)
+    { // jalr
+        int32_t imm = sign_extend(operate >> 20, 12);
+        if (printer)
+            std::cout << "jalr x" << rd << ", " << imm << "(x" << rs1 << ")" << std::endl;
+        jalr(rd, rs1, imm);
+        return; // 跳转指令直接返回，不再执行下面的 increment_pc
+    }
+    else if (opcode == 0b0110011 && funct3 == 0b000 && funct7 == 0b0000000)
+    { // add
+        if (printer)
+            std::cout << "add x" << rd << ", x" << rs1 << ", x" << rs2 << std::endl;
+        add(rd, rs1, rs2);
+    }
+    else if (opcode == 0b0110111)
+    {                                         // lui
+        u_int32_t imm = operate & 0xFFFFF000; // 已经是左移12位后的值
+        if (printer)
+            std::cout << "lui x" << rd << ", 0x" << std::hex << (imm >> 12) << std::dec << std::endl;
+        lui(rd, imm);
+    }
+    else if (opcode == 0b0000011)
+    { // lw / lbu
+        int32_t imm = sign_extend(operate >> 20, 12);
+        if (funct3 == 0b010)
+        { // lw
+            if (printer)
+                std::cout << "lw x" << rd << ", " << imm << "(x" << rs1 << ")" << std::endl;
+            lw(rd, rs1, imm);
+        }
+        else if (funct3 == 0b100)
+        { // lbu
+            if (printer)
+                std::cout << "lbu x" << rd << ", " << imm << "(x" << rs1 << ")" << std::endl;
+            lbu(rd, rs1, imm);
+        }
+        else
+        {
+            goto ERROR;
+        }
+    }
+    else if (opcode == 0b0100011)
+    { // sw / sb  (S-type)
+        // 正确拼接 S-type 立即数
+        u_int32_t imm_raw = ((operate >> 25) & 0x7F) << 5 | ((operate >> 7) & 0x1F);
+        int32_t imm = sign_extend(imm_raw, 12);
+        if (funct3 == 0b000)
+        { // sb
+            if (printer)
+                std::cout << "sb x" << rs2 << ", " << imm << "(x" << rs1 << ")" << std::endl;
+            sb(rs1, rs2, imm);
+        }
+        else if (funct3 == 0b010)
+        { // sw
+            if (printer)
+                std::cout << "sw x" << rs2 << ", " << imm << "(x" << rs1 << ")" << std::endl;
+            sw(rs1, rs2, imm);
+        }
+        else
+        {
+            goto ERROR;
+        }
+    }
+    else
+    {
+        goto ERROR;
+    }
+    // 只有非跳转指令才在这里 +4
+    if (opcode != 0b1100111)
+    { // 不是 jalr
+        increment_pc();
+    }
+    return;
+ERROR:
+    std::cout << "Unsupported instruction! PC=0x" << std::hex << read_pc()
+              << " inst=0x" << operate << std::dec << std::endl;
 }
