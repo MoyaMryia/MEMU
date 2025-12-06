@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv){
     
-    freopen("out.txt","w",stdout);
+    //freopen("out.txt","w",stdout);
     //std::cout<<"PC Status:"<<read_pc()<<std::endl;
     printStatus();
     /*while(1){

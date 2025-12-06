@@ -27,7 +27,7 @@ void runMain(u_int32_t operate, bool printer)
         if (printer)
             std::cout << "jalr x" << rd << ", " << imm << "(x" << rs1 << ")" << std::endl;
         jalr(rd, rs1, imm);
-        return; // 跳转指令直接返回，不再执行下面的 increment_pc
+        return; 
     }
     else if (opcode == 0b0110011 && funct3 == 0b000 && funct7 == 0b0000000)
     { // add
@@ -37,7 +37,7 @@ void runMain(u_int32_t operate, bool printer)
     }
     else if (opcode == 0b0110111)
     {                                         // lui
-        u_int32_t imm = operate & 0xFFFFF000; // 已经是左移12位后的值
+        u_int32_t imm = operate & 0xFFFFF000; 
         if (printer)
             std::cout << "lui x" << rd << ", 0x" << std::hex << (imm >> 12) << std::dec << std::endl;
         lui(rd, imm);
@@ -64,7 +64,6 @@ void runMain(u_int32_t operate, bool printer)
     }
     else if (opcode == 0b0100011)
     { // sw / sb  (S-type)
-        // 正确拼接 S-type 立即数
         u_int32_t imm_raw = ((operate >> 25) & 0x7F) << 5 | ((operate >> 7) & 0x1F);
         int32_t imm = sign_extend(imm_raw, 12);
         if (funct3 == 0b000)
@@ -88,9 +87,8 @@ void runMain(u_int32_t operate, bool printer)
     {
         goto ERROR;
     }
-    // 只有非跳转指令才在这里 +4
     if (opcode != 0b1100111)
-    { // 不是 jalr
+    { 
         increment_pc();
     }
     return;
