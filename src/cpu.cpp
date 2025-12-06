@@ -1,5 +1,5 @@
 #include "../include/cpu.h"
-
+#include <bitset>
 int32_t sign_extend(u_int32_t imm, int bits) {
     if ((imm >> (bits - 1)) & 1) {
         return (int32_t)(imm | (~((1 << bits) - 1)));
@@ -9,13 +9,22 @@ int32_t sign_extend(u_int32_t imm, int bits) {
 }
 
 void runMain(u_int32_t operate,bool printer){
+    
     u_int32_t opcode = operate & 0b1111111;
     u_int32_t rd = (operate >> 7) & 0b11111;
     u_int32_t funct3 = (operate >> 12) & 0b111;
     u_int32_t rs1 = (operate >> 15) & 0b11111;
     u_int32_t rs2 = (operate >> 20) & 0b11111;
     u_int32_t funct7 = (operate >>25) & 0b1111111;
-    std::cout<<"Now Command:";
+    //std::cout<<"Command:"<<operate<<std::endl;
+    /*
+    std::cout<<"opcode:"<<std::bitset<7>(opcode)<<std::endl;
+    std::cout<<"rd:"<<std::bitset<5>(rd)<<std::endl;
+    std::cout<<"funct3:"<<std::bitset<3>(funct3)<<std::endl;
+    std::cout<<"rs1:"<<std::bitset<5>(rs1)<<std::endl;
+    std::cout<<"rs2:"<<std::bitset<5>(rs2)<<std::endl;
+    std::cout<<"funct7:"<<std::bitset<7>(funct7)<<std::endl;*/
+    //std::cout<<"Now Command:";
     if(opcode == 0b0010011 && funct3 == 0b000){ 
         //addi
         int32_t imm = sign_extend(operate>>20,12);
@@ -55,11 +64,11 @@ void runMain(u_int32_t operate,bool printer){
         int32_t imm = sign_extend(imm_s, 12);
         if(funct3 == 0b000){
             //sb
-            if(printer) std::cout << "sb x" << rs2 << "," << imm << "(x" << rs1 << ")" << std::endl;
+            if(printer) std::cout<< "sb x" << rs2 << "," << imm << "(x" << rs1 << ")" << std::endl;
             sb(rs1,rs2,imm);
         }else if(funct3 == 0b010){
             //sw
-            if(printer) std::cout << "sw x" << rs2 << "," << imm << "(x" << rs1 << ")" << std::endl;
+            if(printer) std::cout<< "sw x" << rs2 << "," << imm << "(x" << rs1 << ")" << std::endl;
             sw(rs1,rs2,imm);
         }else{
             goto ERROR_OCCUR;
@@ -72,4 +81,3 @@ void runMain(u_int32_t operate,bool printer){
                   << std::hex << opcode << std::dec << ")" << std::endl;
     return ;
 }
-//0000000 00100 00010 010 00000 010 0011

@@ -267,6 +267,7 @@ CMakeFiles/MEMU.dir/src/cpu.cpp.o: src/cpu.cpp \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
   /usr/include/c++/13/bits/utility.h \
+  /usr/include/c++/13/bitset \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
   /usr/include/c++/13/clocale \
@@ -686,6 +687,7 @@ CMakeFiles/MEMU.dir/src/monitor.cpp.o: src/monitor.cpp \
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/limits \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
@@ -1014,6 +1016,8 @@ CMakeFiles/MEMU.dir/src/shell.cpp.o: src/shell.cpp \
 
 src/shell.cpp:
 
+/usr/include/c++/13/limits:
+
 src/monitor.cpp:
 
 src/memory.cpp:
@@ -1159,6 +1163,8 @@ src/cpu.cpp:
 /usr/include/c++/13/bits/basic_ios.h:
 
 /usr/include/c++/13/bits/move.h:
+
+/usr/include/c++/13/bitset:
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 

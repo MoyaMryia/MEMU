@@ -1,5 +1,5 @@
 #include "common.h"
-
+#include <limits>
 void startMonitor(int argc,char **argv){
     
     if(argc<2){
@@ -19,24 +19,68 @@ void startMonitor(int argc,char **argv){
         //getchar();
     }
     getchar();*/
-    char t = getchar();
-    while(1){
-        while(t=='\n') t = getchar();
-        if(t == 'n'){
+    char t;
+    while (true) {
+        std::cout << "> ";
+        if (!(std::cin >> t)) break; 
+        if (t == 'n') {
+            std::cout<<"PC Status:"<<read_pc()<<std::endl;
             run_cycle();
-        }else if(t == 'p'){
+            printStatus(); 
+        } else if (t == 'p') {
             printStatus();
+        } else if (t == 'q') {
+            std::cout << "Exiting simulator." << std::endl;
+            return;
+        } else if (t == 'm') {
+            int m_addr;
+            std::cout << "Enter address (hex): ";
+            if (std::cin >> std::hex >> m_addr) {
+                std::cout << "MEM[0x" << std::hex << m_addr << "] = 0x" 
+                          << std::hex << read_memory_word(m_addr) << std::endl;
+            } else {
+                std::cout << "Invalid address format." << std::endl;
+                std::cin.clear(); 
+            }
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            
+        } else if(t == 'l'){
+            int m_addr;
+            std::cout << "Enter cycle loops: ";
+            if (std::cin>> m_addr) {
+                for(int i = 1;i<=m_addr;++i){
+                    run_cycle();
+                    printStatus(); 
+                }
+            } else {
+                std::cout << "Invalid." << std::endl;
+                std::cin.clear(); 
+            }
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            
+        }else if (t == 'b') {
+        int b_addr;
+        std::cout << "Enter byte address (hex): ";
+        if (std::cin >> std::hex >> b_addr) {
+            u_int32_t byte_data = read_memory_byte(b_addr);
+            std::cout << "BYTE[0x" << std::hex << b_addr << "] = 0x" 
+                      << std::hex << (byte_data & 0xFF) << std::endl;
+        } else {
+            std::cout << "Invalid byte address format." << std::endl;
+            std::cin.clear(); 
         }
-        if(t == 'q'){
-            return ;
-        }
-        t = getchar();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        
+    } else {
+        std::cout << "Unknown command: " << t << std::endl;
+    }
     }
 }
 
+
 void printStatus(){
+    std::cout<<read_pc()<<std::endl;
     std::cout<<"PC Clock:"<<read_pc_clock()
-        <<"\nPC Status:"<<read_pc()
         <<"\nGPR Status:\n";
     for(int i = 0;i<32;++i){
         std::cout<<read_gpr(i)<<' ';
@@ -49,7 +93,7 @@ void run_cycle(){
     //decode command & run
     
     //because of the jalr, the switch process will be in mainRun()
-    runMain(operate, 1);
+    runMain(operate, 0);
     //printStatus();
     //get next clock
     increment_pc_clock();
