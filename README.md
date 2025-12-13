@@ -1,6 +1,6 @@
 # MEMU
 
-According to the [MIT Academic Integrity](https://integrity.mit.edu/), considering this project would affect [ysyx-E4](https://ysyx.oscc.cc/docs/en/2407/e/4.html#implementation-of-minirvemu) and some other homework-like projects, this repositary would currently set to private.
+According to the [MIT Academic Integrity](https://integrity.mit.edu/), considering this project would affect [ysyx-E4](https://ysyx.oscc.cc/docs/en/2407/e/4.html#implementation-of-minirvemu) and some other homework-like projects, this repository is currently set to private.
 
 If you still need the code, please contact [MoyaMryia](https://github.com/MoyaMryia) for accessibility of [MEMU_Private](https://github.com/MoyaMryia/MEMU_Private).
 
